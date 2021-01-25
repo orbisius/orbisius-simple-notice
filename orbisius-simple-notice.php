@@ -1,9 +1,9 @@
 <?php
 /*
   Plugin Name: Orbisius Simple Notice
-  Plugin URI: http://club.orbisius.com/products/wordpress-plugins/orbisius-simple-notice/
+  Plugin URI: https://orbisius.com/products/wordpress-plugins/orbisius-simple-notice/
   Description: This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
-  Version: 1.0.9
+  Version: 1.1.0
   Author: Svetoslav Marinov (Slavi)
   Author URI: http://orbisius.com
  */
@@ -664,7 +664,7 @@ function orbisius_simple_notice_options_page() {
                                 <br/>
                                  <a href="<?php echo $product_page; ?>" target="_blank" title="[new window]">Product Page</a>
                                     |
-                                <span>Support: <a href="http://club.orbisius.com/forums/forum/community-support-forum/wordpress-plugins/orbisius-child-theme-creator/?utm_source=orbisius-child-theme-creator&utm_medium=plugin-settings&utm_campaign=product"
+                                <span>Support: <a href="https://orbisius.com/forums/forum/community-support-forum/wordpress-plugins/orbisius-child-theme-creator/?utm_source=orbisius-child-theme-creator&utm_medium=plugin-settings&utm_campaign=product"
                                     target="_blank" title="[new window]">Forums</a>
 
                                     <!--|
@@ -676,7 +676,7 @@ function orbisius_simple_notice_options_page() {
                             <h3><span>Troubleshooting</span></h3>
                             <div class="inside">
                                 If your site becomes broken because of a child theme check:
-                                <a href="http://club.orbisius.com/products/wordpress-plugins/orbisius-theme-fixer/?utm_source=orbisius-child-theme-creator&utm_medium=settings_troubleshooting&utm_campaign=product"
+                                <a href="https://orbisius.com/products/wordpress-plugins/orbisius-theme-fixer/?utm_source=orbisius-child-theme-creator&utm_medium=settings_troubleshooting&utm_campaign=product"
                                 target="_blank" title="[new window]">Orbisius Theme Fixer</a>
                             </div>
                         </div> <!-- .postbox -->

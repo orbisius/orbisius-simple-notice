@@ -2,9 +2,10 @@
 Contributors: lordspace,orbisius
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7APYDVPBCSY9A
 Tags: wp,orbisius,notice,alert,hellobar,hello bar,beforesite, heads up, heads up bar, headsup, headsupbar, notification, notification bar, popup, Toolbar
-Requires at least: 2.6
-Tested up to: 4.6
+Requires at least: 3.6
+Tested up to: 5.6
 Stable tag: 1.0.9
+Requires PHP: 5.6
 License: GPLv2 or later
 
 This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
@@ -12,7 +13,7 @@ This plugin allows you to show a simple notice to alert your users about server 
 == Description ==
 
 = Support =
-> Support is handled on our site: <a href="http://club.orbisius.com/" target="_blank" title="[new window]">http://club.orbisius.com/</a>
+> Support is handled on our site: <a href="https://orbisius.com" target="_blank" title="[new window]">https://orbisius.com</a>
 > Please do NOT use the WordPress forums or other places to seek support.
 
 This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
@@ -29,12 +30,14 @@ This plugin allows you to show a simple notice to alert your users about server 
 * Change the font size of the box
 
 == Demo ==
-TODO
+
+Live demo powered by https://WPDemo.net
+https://wpdemo.net/try/plugin/orbisius-simple-notice
 
 Bugs? Suggestions? If you want a faster response contact us through our website's contact form [ orbisius.com ] and not through the support tab of this plugin or WordPress forums.
 We don't get notified when such requests get posted in the forums.
 
-> Support is handled on our site: <a href="http://club.orbisius.com/" target="_blank" title="[new window]">http://club.orbisius.com/</a>
+> Support is handled on our site: <a href="https://orbisius.com/" target="_blank" title="[new window]">https://orbisius.com/</a>
 > Please do NOT use the WordPress forums or other places to seek support.
 
 = Author =
@@ -65,6 +68,10 @@ If you don't want to give us credit :( add this line to your functions.php
 add_filter('orbisius_simple_notice_filter_powered_by', '__return_false', 10);
 
 == Changelog ==
+
+= 1.1.0 =
+* Added demo link
+* Added Requires PHP tag in the readme
 
 = 1.0.9 =
 * Changed non-ssl links to protocol relative ones
