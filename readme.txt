@@ -12,10 +12,6 @@ This plugin allows you to show a simple notice to alert your users about server 
 
 == Description ==
 
-= Support =
-> Support is handled on our site: <a href="https://orbisius.com" target="_blank" title="[new window]">https://orbisius.com</a>
-> Please do NOT use the WordPress forums or other places to seek support.
-
 This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
 
 = Features / Benefits =
@@ -34,15 +30,13 @@ This plugin allows you to show a simple notice to alert your users about server 
 Live demo powered by https://WPDemo.net
 https://wpdemo.net/try/plugin/orbisius-simple-notice
 
-Bugs? Suggestions? If you want a faster response contact us through our website's contact form [ orbisius.com ] and not through the support tab of this plugin or WordPress forums.
-We don't get notified when such requests get posted in the forums.
-
-> Support is handled on our site: <a href="https://orbisius.com/" target="_blank" title="[new window]">https://orbisius.com/</a>
-> Please do NOT use the WordPress forums or other places to seek support.
+= Support =
+> The support is handled on our site: <a href="https://github.com/orbisius/orbisius-simple-notice/issues" target="_blank" title="[new window]">https://github.com/orbisius/orbisius-simple-notice/issues/a>
+> Please do NOT use the WordPress forums or other places to seek support as we might not see it on time.
 
 = Author =
 
-Svetoslav Marinov (Slavi) | <a href="http://orbisius.com" title="Custom Web Programming, Web Design, e-commerce, e-store, Wordpress Plugin Development, Facebook and Mobile App Development in Niagara Falls, St. Catharines, Ontario, Canada" target="_blank">Custom Web and Mobile Programming by Orbisius.com</a>
+Svetoslav Marinov (Slavi) | <a href="https://orbisius.com" title="Custom Web Programming, Web Design, e-commerce, e-store, Wordpress Plugin Development, Facebook and Mobile App Development in Niagara Falls, St. Catharines, Ontario, Canada" target="_blank">Custom Web and Mobile Programming by Orbisius.com</a>
 
 == Upgrade Notice ==
 n/a
@@ -72,6 +66,9 @@ add_filter('orbisius_simple_notice_filter_powered_by', '__return_false', 10);
 = 1.1.0 =
 * Added demo link
 * Added Requires PHP tag in the readme
+* Tested with WP 5.6
+* Switched all links to https
+* Removed some external sharing sites
 
 = 1.0.9 =
 * Changed non-ssl links to protocol relative ones

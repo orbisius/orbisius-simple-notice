@@ -5,7 +5,7 @@
   Description: This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
   Version: 1.1.0
   Author: Svetoslav Marinov (Slavi)
-  Author URI: http://orbisius.com
+  Author URI: https://orbisius.com
  */
 
 /*  Copyright 2012-2050 Svetoslav Marinov (Slavi) <slavi@orbisius.com>
@@ -50,8 +50,8 @@ function orbisius_simple_notice_add_quick_settings_link($links, $file) {
 /**
  * Setups loading of assets (css, js).
  * for live servers we'll use the minified versions e.g. main.min.js otherwise .js or .css (dev)
- * @see http://jscompress.com/ - used for JS compression
- * @see http://refresh-sf.com/yui/ - used for CSS compression
+ * @see https://jscompress.com/ - used for JS compression
+ * @see https://refresh-sf.com/yui/ - used for CSS compression
  * @return type
  */
 function orbisius_simple_notice_init() {
@@ -582,9 +582,9 @@ function orbisius_simple_notice_options_page() {
                         <div class="postbox">
                             <h3><span>Hire Us</span></h3>
                             <div class="inside">
-                                Hire us to create a plugin/web/mobile app
-                                <br/><a href="http://orbisius.com/page/free-quote/?utm_source=<?php echo str_replace('.php', '', basename(__FILE__));?>&utm_medium=plugin-settings&utm_campaign=product"
-                                   title="If you want a custom web/mobile app/plugin developed contact us. This opens in a new window/tab"
+                                Hire us to create a plugin/web/SaaS app
+                                <br/><a href="https://orbisius.com/page/free-quote/?utm_source=<?php echo str_replace('.php', '', basename(__FILE__));?>&utm_medium=plugin-settings&utm_campaign=product"
+                                   title="If you want a custom web/SaaS app/plugin developed contact us. This opens in a new window/tab"
                                     class="button-primary" target="_blank">Get a Free Quote</a>
                             </div> <!-- .inside -->
                         </div> <!-- .postbox -->
@@ -600,7 +600,7 @@ function orbisius_simple_notice_options_page() {
                                         $email = empty($current_user->user_email) ? '' : $current_user->user_email;
                                     ?>
 
-                                    <form action="http://WebWeb.us2.list-manage.com/subscribe/post?u=005070a78d0e52a7b567e96df&amp;id=1b83cd2093" method="post"
+                                    <form action="https://WebWeb.us2.list-manage.com/subscribe/post?u=005070a78d0e52a7b567e96df&amp;id=1b83cd2093" method="post"
                                           id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                                         <input type="hidden" value="settings" name="SRC2" />
                                         <input type="hidden" value="orbisius-child-theme-creator" name="SRC" />
@@ -622,23 +622,21 @@ function orbisius_simple_notice_options_page() {
                             </div> <!-- .inside -->
                         </div> <!-- .postbox -->
 
-                        <?php orbisius_simple_notice_widget::output_widget(); ?>
-
                         <?php
-                                        $plugin_data = get_plugin_data(__FILE__);
-                                        $product_name = trim($plugin_data['Name']);
-                                        $product_page = trim($plugin_data['PluginURI']);
-                                        $product_descr = trim($plugin_data['Description']);
-                                        $product_descr_short = substr($product_descr, 0, 50) . '...';
+                            $plugin_data = get_plugin_data(__FILE__);
+                            $product_name = trim($plugin_data['Name']);
+                            $product_page = trim($plugin_data['PluginURI']);
+                            $product_descr = trim($plugin_data['Description']);
+                            $product_descr_short = substr($product_descr, 0, 50) . '...';
 
-                                        $base_name_slug = basename(__FILE__);
-                                        $base_name_slug = str_replace('.php', '', $base_name_slug);
-                                        $product_page .= (strpos($product_page, '?') === false) ? '?' : '&';
-                                        $product_page .= "utm_source=$base_name_slug&utm_medium=plugin-settings&utm_campaign=product";
+                            $base_name_slug = basename(__FILE__);
+                            $base_name_slug = str_replace('.php', '', $base_name_slug);
+                            $product_page .= (strpos($product_page, '?') === false) ? '?' : '&';
+                            $product_page .= "utm_source=$base_name_slug&utm_medium=plugin-settings&utm_campaign=product";
 
-                                        $product_page_tweet_link = $product_page;
-                                        $product_page_tweet_link = str_replace('plugin-settings', 'tweet', $product_page_tweet_link);
-                                    ?>
+                            $product_page_tweet_link = $product_page;
+                            $product_page_tweet_link = str_replace('plugin-settings', 'tweet', $product_page_tweet_link);
+                        ?>
 
                         <div class="postbox">
                             <div class="inside">
@@ -651,8 +649,6 @@ function orbisius_simple_notice_options_page() {
                                        data-align="right" data-show-count="false">Follow @orbisius</a>
                                 <!-- /Twitter: Orbisius_Follow:js -->
 
-                                &nbsp;
-
                                 <!-- Twitter: Tweet:js -->
                                 <a href="https://twitter.com/share" class="twitter-share-button"
                                    data-lang="en" data-text="Checkout <?php echo esc_attr($product_name); ?> #WordPress #plugin."
@@ -660,35 +656,20 @@ function orbisius_simple_notice_options_page() {
                                    data-url="<?php echo $product_page_tweet_link;?>">Tweet</a>
                                 <!-- /Twitter: Tweet:js -->
 
-
                                 <br/>
                                  <a href="<?php echo $product_page; ?>" target="_blank" title="[new window]">Product Page</a>
                                     |
-                                <span>Support: <a href="https://orbisius.com/forums/forum/community-support-forum/wordpress-plugins/orbisius-child-theme-creator/?utm_source=orbisius-child-theme-creator&utm_medium=plugin-settings&utm_campaign=product"
-                                    target="_blank" title="[new window]">Forums</a>
-
-                                    <!--|
-                                     <a href="http://docs.google.com/viewer?url=https%3A%2F%2Fdl.dropboxusercontent.com%2Fs%2Fwz83vm9841lz3o9%2FOrbisius_LikeGate_Documentation.pdf" target="_blank">Documentation</a>
-                                    -->
+                                <span><a href="https://github.com/orbisius/orbisius-simple-notice/issues"
+                                    target="_blank" title="[new window]">Support</a>
                                 </span>
                             </div>
-
-                            <h3><span>Troubleshooting</span></h3>
-                            <div class="inside">
-                                If your site becomes broken because of a child theme check:
-                                <a href="https://orbisius.com/products/wordpress-plugins/orbisius-theme-fixer/?utm_source=orbisius-child-theme-creator&utm_medium=settings_troubleshooting&utm_campaign=product"
-                                target="_blank" title="[new window]">Orbisius Theme Fixer</a>
-                            </div>
                         </div> <!-- .postbox -->
-
 
                         <div class="postbox"> <!-- quick-contact -->
                             <?php
                             $current_user = wp_get_current_user();
                             $email = empty($current_user->user_email) ? '' : $current_user->user_email;
-                            $quick_form_action = is_ssl()
-                                    ? 'https://ssl.orbisius.com/apps/quick-contact/'
-                                    : 'http://apps.orbisius.com/quick-contact/';
+                            $quick_form_action = 'https://apps.orbisius.com/quick-contact/';
 
                             if (!empty($_SERVER['DEV_ENV'])) {
                                 $quick_form_action = 'http://localhost/projects/quick-contact/';
@@ -791,55 +772,13 @@ function orbisius_simple_notice_options_page() {
             if (!has_action('orbisius_simple_notice_ext_action_extension_list')) {
                 echo "No extensions have been installed.";
             } else {
-                echo "The following extensions have been found.<br/><ul>";
-                do_action('orbisius_simple_notice_ext_action_extension_list');
+	            echo "The following extensions have been found.<br/><ul>";
+	            echo "<ul>";
+	            do_action('orbisius_simple_notice_ext_action_extension_list');
                 echo "</ul>";
             }
             ?>
         </div>
-
-        <!-- share -->
-        <?php
-        $plugin_data = orbisius_simple_notice_get_plugin_data();
-
-        $app_link = urlencode($plugin_data['url']);
-        $app_title = urlencode($plugin_data['name']);
-        $app_descr = urlencode($plugin_data['description']);
-        ?>
-
-        <h2>Share</h2>
-        <p>
-            <!-- AddThis Button BEGIN -->
-        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-            <a class="addthis_button_facebook" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_twitter" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_google_plusone" g:plusone:count="false" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_linkedin" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_email" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_myspace" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_google" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_digg" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_delicious" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_stumbleupon" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_tumblr" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_favorites" addthis:url="<?php echo $app_link ?>" addthis:title="<?php echo $app_title ?>" addthis:description="<?php echo $app_descr ?>"></a>
-            <a class="addthis_button_compact"></a>
-        </div>
-        <!-- The JS code is in the footer -->
-
-        <script type="text/javascript">
-            var addthis_config = {"data_track_clickback": true};
-            var addthis_share = {
-                templates: {twitter: 'Check out {{title}} @ {{lurl}}'}
-            }
-        </script>
-        <!-- AddThis Button START part2 -->
-        <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js"></script>
-        <!-- AddThis Button END part2 -->
-    </p>
-    <!-- /share -->
-
-    <?php orbisius_simple_notice_widget::output_widget('author'); ?>
 
     </div>
     <?php
@@ -859,7 +798,7 @@ function orbisius_simple_notice_generate_newsletter_box() {
                 <div id='app-plugin-notice' class='app_mailing_list_box' width="100%">
                     <!-- Begin MailChimp Signup Form -->
                     <div id="mc_embed_signup">
-                        <form action="http://orbisius.us2.list-manage.com/subscribe/post?u=005070a78d0e52a7b567e96df&amp;id=1b83cd2093" method="post"
+                        <form action="https://orbisius.us2.list-manage.com/subscribe/post?u=005070a78d0e52a7b567e96df&amp;id=1b83cd2093" method="post"
                               id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                             <input type="hidden" value="<?php echo esc_attr($plugin_name); ?>" name="SRC" id="mce-SRC" />
                             <input type="hidden" value="<?php echo esc_attr($plugin_name); ?>" name="MERGE3" id="mce-MERGE3" />
@@ -882,7 +821,7 @@ function orbisius_simple_notice_generate_newsletter_box() {
             </td>
             <!--<td valign="top">
                 <p>
-                    You can also signup using this link: <a href="http://eepurl.com/guNzr" target="_blank">http://eepurl.com/guNzr</a> <br/>
+                    You can also signup using this link: <a href="https://eepurl.com/guNzr" target="_blank">https://eepurl.com/guNzr</a> <br/>
                     You can also signup using this QR code: <br/>
                     <img src="%%PLUGIN_URL%%/zzz_media/qr_code.png" alt="" width="100"/>
                 </p>
@@ -920,43 +859,4 @@ function orbisius_simple_notice_add_plugin_credits() {
     $name = $plugin_data['name'];
 
     printf(PHP_EOL . PHP_EOL . '<!-- ' . "Powered by $name | URL: $url " . '-->' . PHP_EOL . PHP_EOL);
-}
-
-/**
- * Orbisius Widget
- */
-class orbisius_simple_notice_widget {
-    /**
-     * Loads news from Club Orbsius Site.
-     * <?php orbisius_simple_notice_widget::output_widget(); ?>
-     * <?php orbisius_simple_notice_widget::output_widget('author'); ?>
-     */
-    public static function output_widget($obj = '', $return = 0) {
-        $buff = '';
-        ?>
-        <!-- Orbisius JS Widget -->
-            <?php
-                $naked_domain = !empty($_SERVER['DEV_ENV']) ? 'orbclub.com.clients.com' : 'club.orbisius.com';
-
-                if (!empty($_SERVER['DEV_ENV']) && is_ssl()) {
-                    $naked_domain = 'ssl.orbisius.com/club';
-                }
-
-				// obj could be 'author'
-                $obj = empty($obj) ? str_replace('.php', '', basename(__FILE__)) : sanitize_title($obj);
-                $obj_id = 'orb_widget_' . sha1($obj);
-
-                $params = '?' . http_build_query(array('p' => $obj, 't' => $obj_id, 'layout' => 'plugin', ));
-                $buff .= "<div id='$obj_id' class='$obj_id orbisius_ext_content'><a href='http://orbisius.com'>Orbisius product</div>\n";
-                //$buff .= "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://$naked_domain/wpu/widget/$params';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'orbsius-js-$obj_id');</script>";
-            ?>
-            <!-- /Orbisius JS Widget -->
-        <?php
-
-        if ($return) {
-            return $buff;
-        } else {
-            echo $buff;
-        }
-    }
 }
