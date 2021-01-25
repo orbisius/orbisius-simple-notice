@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp,orbisius,notice,alert,hellobar,hello bar,beforesite, heads up, heads up bar, headsup, headsupbar, notification, notification bar, popup, Toolbar
 Requires at least: 3.6
 Tested up to: 5.6
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 Requires PHP: 5.6
 License: GPLv2 or later
 
