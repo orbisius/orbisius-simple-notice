@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp,orbisius,notice,alert,hellobar,hello bar,beforesite, heads up, heads up bar, headsup, headsupbar, notification, notification bar, popup, Toolbar
 Requires at least: 3.6
 Tested up to: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 5.6
 License: GPLv2 or later
 
@@ -27,16 +27,16 @@ This plugin allows you to show a simple notice to alert your users about server 
 
 == Demo ==
 
-Live demo powered by https://WPDemo.net
-https://wpdemo.net/try/plugin/orbisius-simple-notice
+Live demo powered by <a href="https://wpdemo.net/?utm_sourceorbisius-simple-notice" target="_blank" title="WordPress demo site">WPDemo.net</a>
+<a href="https://wpdemo.net/try/plugin/orbisius-simple-notice" target="_blank" title="[new window]">https://wpdemo.net/try/plugin/orbisius-simple-notice</a>
 
 = Support =
-> The support is handled on our site: <a href="https://github.com/orbisius/orbisius-simple-notice/issues" target="_blank" title="[new window]">https://github.com/orbisius/orbisius-simple-notice/issues/a>
+> The support is handled here: <a href="https://github.com/orbisius/orbisius-simple-notice/issues" target="_blank" title="[new window]">https://github.com/orbisius/orbisius-simple-notice/issues</a>
 > Please do NOT use the WordPress forums or other places to seek support as we might not see it on time.
 
 = Author =
 
-Svetoslav Marinov (Slavi) | <a href="https://orbisius.com" title="Custom Web Programming, Web Design, e-commerce, e-store, Wordpress Plugin Development, Facebook and Mobile App Development in Niagara Falls, St. Catharines, Ontario, Canada" target="_blank">Custom Web and Mobile Programming by Orbisius.com</a>
+Svetoslav Marinov (Slavi) | <a href="https://orbisius.com" title="Custom Web Development, e-commerce, Plugin Development, Ontario, Canada" target="_blank">Custom Plugin, Web & SaaS app Development by Orbisius.com</a>
 
 == Upgrade Notice ==
 n/a
@@ -58,10 +58,13 @@ Just install the plugin and activate it. The feedback text appear in the public 
 
 = How to remove the powered by? =
 
-If you don't want to give us credit :( add this line to your functions.php
-add_filter('orbisius_simple_notice_filter_powered_by', '__return_false', 10);
+If you don't want to give us credit you can do that from the options or by using the filter below. Add this to your functions.php or custom plugin
+add_filter('orbisius_simple_notice_filter_powered_by', '__return_false');
 
 == Changelog ==
+
+= 1.1.1 =
+* Fixed links in the readme file.
 
 = 1.1.0 =
 * Added demo link
