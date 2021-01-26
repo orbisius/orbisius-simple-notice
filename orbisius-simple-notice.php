@@ -3,7 +3,7 @@
   Plugin Name: Orbisius Simple Notice
   Plugin URI: https://orbisius.com/products/wordpress-plugins/orbisius-simple-notice/
   Description: This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
-  Version: 1.1.1
+  Version: 1.1.2
   Author: Svetoslav Marinov (Slavi)
   Author URI: https://orbisius.com
  */
@@ -182,7 +182,7 @@ FORM_EOF;
         "padding:4px 0",
         "text-align:center",
         "width:100%",
-        //"z-index:99999",
+        "z-index:1000",
         "font-family:arial",
     );
 
@@ -233,6 +233,10 @@ FORM_EOF;
 <style>
 .orbisius_simple_notice_container .orbisius_simple_notice {
     $inline_css
+}
+
+.orbisius_simple_notice_container a {
+    text-decoration:underline;
 }
 
 $link_color_css
