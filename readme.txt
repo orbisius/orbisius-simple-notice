@@ -63,6 +63,10 @@ add_filter('orbisius_simple_notice_filter_powered_by', '__return_false');
 
 == Changelog ==
 
+= 1.1.2 =
+* Added z-index so the links in the message are clickable.
+* Made sure that links have underline
+
 = 1.1.1 =
 * Fixed links in the readme file.
 
