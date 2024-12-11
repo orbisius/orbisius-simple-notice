@@ -1,6 +1,8 @@
-jQuery(document).ready(function($) {
-    orbisius_simple_notice_setup_js();
-});
+(function($) {
+    $(document).ready(function() {
+        orbisius_simple_notice_setup_js();
+    });
+})(jQuery);
 
 function orbisius_simple_notice_setup_js() {
     // This if statement checks if the color picker widget exists within jQuery UI
