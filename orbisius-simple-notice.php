@@ -3,7 +3,7 @@
   Plugin Name: Orbisius Simple Notice
   Plugin URI: https://orbisius.com/products/wordpress-plugins/orbisius-simple-notice/
   Description: This plugin allows you to show a simple notice to alert your users about server maintenance, new product launches etc.
-  Version: 1.1.2
+  Version: 1.1.4
   Author: Svetoslav Marinov (Slavi)
   Author URI: https://orbisius.com
  */
@@ -57,6 +57,8 @@ function orbisius_simple_notice_add_quick_settings_link($links, $file) {
 function orbisius_simple_notice_init() {
     $dev = empty($_SERVER['DEV_ENV']) ? 0 : 1;
     $suffix = $dev ? '' : '.min';
+
+    wp_enqueue_script('jquery');
 
     /*wp_register_style('simple_notice', plugins_url("/assets/main{$suffix}.css", __FILE__));
     wp_enqueue_style('simple_notice');*/
@@ -113,37 +115,39 @@ function orbisius_simple_notice_inject_notice($is_site_front_end = 1) {
 
         $js_code .= <<<FORM_EOF
     <script>
-    jQuery(document).ready(function ($) {
-        var msg_id = jQuery('#orbisius_simple_notice').data('msg_id');
-
-        if (!jQuery('body').hasClass('wp-admin')) { // public area only
-            var orb_simp_ntc_dismiss_hash = jQuery.cookie('orb_simp_ntc_dismiss') || '';
-
-            /* if the cookie exists and matches the msg_id that means the user has dismissed the message already. So don't show it for another day. */
-            if (orb_simp_ntc_dismiss_hash == msg_id) {
-                jQuery('#orbisius_simple_notice_container').hide();
-            }
-        }
-
-        // The user has clicked on the X sign
-        jQuery('#orbisius_simple_notice_container .dismiss_message').on('click', function() {
-            jQuery('#orbisius_simple_notice_container').slideUp('slow');
-
-            // for WP admin show the message.
-            if (jQuery('body').hasClass('wp-admin')) {
-                setTimeout(function () {
-                    jQuery('#orbisius_simple_notice_container').slideDown('slow');
-                }, 2000);
-            } else {
-                // this will be empty for new messages or expired cookies
-                var orb_simp_ntc_dismiss_hash = jQuery.cookie('orb_simp_ntc_dismiss') || '';
-
-                if (orb_simp_ntc_dismiss_hash == '') {
-                    jQuery.cookie('orb_simp_ntc_dismiss', msg_id, { expires: 2 } );
+    (function ($) {
+        $(document).ready(function ($) {
+            let msg_id = jQuery('#orbisius_simple_notice').data('msg_id');
+    
+            if (!jQuery('body').hasClass('wp-admin')) { // public area only
+                let orb_simp_ntc_dismiss_hash = jQuery.cookie('orb_simp_ntc_dismiss') || '';
+    
+                /* if the cookie exists and matches the msg_id that means the user has dismissed the message already. So don't show it for another day. */
+                if (orb_simp_ntc_dismiss_hash == msg_id) {
+                    jQuery('#orbisius_simple_notice_container').hide();
                 }
             }
+    
+            // The user has clicked on the X sign
+            jQuery('#orbisius_simple_notice_container .dismiss_message').on('click', function() {
+                jQuery('#orbisius_simple_notice_container').slideUp('slow');
+    
+                // for WP admin show the message.
+                if (jQuery('body').hasClass('wp-admin')) {
+                    setTimeout(function () {
+                        jQuery('#orbisius_simple_notice_container').slideDown('slow');
+                    }, 2000);
+                } else {
+                    // this will be empty for new messages or expired cookies
+                    var orb_simp_ntc_dismiss_hash = jQuery.cookie('orb_simp_ntc_dismiss') || '';
+    
+                    if (orb_simp_ntc_dismiss_hash == '') {
+                        jQuery.cookie('orb_simp_ntc_dismiss', msg_id, { expires: 2 } );
+                    }
+                }
+            });
         });
-    });
+    })(jQuery);
 </script>
 FORM_EOF;
     }
@@ -206,9 +210,11 @@ FORM_EOF;
         } else {
             $js_code .= <<<FORM_EOF
 <script>
-    jQuery(document).ready(function ($) {
-        jQuery('#orbisius_simple_notice_container').prependTo('body'); // .css('postion', '')
-    });
+    (function($) {
+        $(document).ready(function ($) {
+            $('#orbisius_simple_notice_container').prependTo('body'); // .css('postion', '')
+        });        
+    })(jQuery);
 </script>
 FORM_EOF;
         }
@@ -227,6 +233,7 @@ FORM_EOF;
 
     $msg_id = 'orb_ntc_'. md5($notice);
     $notice = do_shortcode($notice);
+    $notice_buff = wp_kses_post($notice);
 
     $form_buff = <<<FORM_EOF
 <!-- orbisius_simple_notice : {$data['name']} | {$data['url']} -->
@@ -267,7 +274,7 @@ $js_code
 <div id="orbisius_simple_notice_container" class="orbisius_simple_notice_container">
     <div id="orbisius_simple_notice" class="orbisius_simple_notice" data-msg_id="$msg_id">
         $powered_by_line
-        $notice
+        $notice_buff
         $close_button_line
     </div> <!-- /orbisius_simple_notice -->
 </div> <!-- /orbisius_simple_notice_container -->
@@ -401,7 +408,8 @@ function orbisius_simple_notice_options_page() {
                                             <td>
                                                 <?php if (1) : ?>
                                                     <?php
-                                                    wp_editor($opts['notice'], "orbisius_simple_notice_options-notice", array(
+                                                    $notice_buff = wp_kses_post($opts['notice']);
+                                                    wp_editor($notice_buff, "orbisius_simple_notice_options-notice", array(
                                                         'teeny' => true,
                                                         'media_buttons' => false,
                                                         'textarea_rows' => 2,
