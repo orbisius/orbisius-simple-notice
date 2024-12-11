@@ -64,6 +64,7 @@ add_filter('orbisius_simple_notice_filter_powered_by', '__return_false');
 == Changelog ==
 
 = 1.1.4 =
+* Assets are appended last modified time, so they are only loaded when modified.
 * Maintenance release.
 
 = 1.1.3 =

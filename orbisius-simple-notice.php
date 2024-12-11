@@ -67,7 +67,12 @@ function orbisius_simple_notice_init() {
 
     // load cookies only if the user wants to have a close button.
     if (!empty($opts['show_close_button'])) {
-        wp_register_script('simple_notice', plugins_url("/assets/jquery.cookie$suffix.js", __FILE__), array('jquery', ), '1.0', true);
+        wp_register_script('simple_notice',
+            plugins_url("/assets/jquery.cookie$suffix.js", __FILE__),
+            array('jquery', ),
+            filemtime( plugin_dir_path( __FILE__ ) . "/assets/jquery.cookie$suffix.js"),
+            true
+        );
         wp_enqueue_script('simple_notice');
     }
 }
@@ -83,7 +88,13 @@ function orbisius_simple_notice_admin_init() {
     wp_enqueue_style($color_picker);
     wp_enqueue_script($color_picker);
 
-    wp_register_script('simple_notice_admin', plugins_url("/assets/admin_main.js", __FILE__), array('jquery',), '1.0', true);
+    wp_register_script(
+        'simple_notice_admin',
+        plugins_url("/assets/admin_main.js", __FILE__),
+        array('jquery',),
+        filemtime( plugin_dir_path( __FILE__ ) . "/assets/admin_main.js"),
+        true
+    );
     wp_enqueue_script('simple_notice_admin');
 }
 
