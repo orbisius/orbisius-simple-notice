@@ -3,8 +3,8 @@ Contributors: lordspace,orbisius
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7APYDVPBCSY9A
 Tags: wp,orbisius,notice,alert,hellobar,hello bar,beforesite, heads up, heads up bar, headsup, headsupbar, notification, notification bar, popup, Toolbar
 Requires at least: 3.6
-Tested up to: 5.6
-Stable tag: 1.1.2
+Tested up to: 6.7
+Stable tag: 1.1.4
 Requires PHP: 5.6
 License: GPLv2 or later
 
@@ -62,6 +62,14 @@ If you don't want to give us credit you can do that from the options or by using
 add_filter('orbisius_simple_notice_filter_powered_by', '__return_false');
 
 == Changelog ==
+
+= 1.1.4 =
+* Maintenance release.
+
+= 1.1.3 =
+* Tested with WP 6.7
+* Fixed how jquery and js was loaded using a different method.
+* Making sure that jquery is loaded.
 
 = 1.1.2 =
 * Added z-index so the links in the message are clickable.
